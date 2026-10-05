@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CFO Clothing | Fashion Beyond Expectations</title>
+<meta name="description" content="CFO Clothing: premium fashion for couples and trendsetters. Worldwide shipping.">
+<meta name="theme-color" content="#050505">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="wrap topbar-in">
+    <span>Worldwide Shipping</span>
+    <a href="https://wa.me/2347073838961" target="_blank" rel="noopener">WhatsApp Support</a>
+    <a href="tel:+2347073838961">+2347073838961</a>
+    <a href="#track" id="trackLink">Track Order</a>
+    <label class="cur"><span class="sr">Currency</span>
+      <select id="currency" aria-label="Currency"></select>
+    </label>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="wrap head-in">
+    <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu"><svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    <a href="#home" class="logo" aria-label="CFO Clothing home">
+      <!-- Put your logo file at images/logo.png. If missing, the text mark shows instead. -->
+      <img src="images/logo.png" alt="CFO Clothing" onerror="this.remove()">
+      <span class="logo-text">CFO <small>Clothing</small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#home">Home</a><a href="#shop">Shop</a><a href="#shop" data-filter="new">New Arrivals</a>
+      <a href="#shop" data-filter="couples">Couples Wear</a><a href="#shop" data-filter="men">Men</a>
+      <a href="#shop" data-filter="women">Women</a><a href="#about">About Us</a><a href="#contact">Contact</a>
+    </nav>
+    <form class="search" id="searchForm" role="search">
+      <input type="search" id="searchInput" placeholder="Search products" aria-label="Search products">
+      <button aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button>
+    </form>
+    <div class="icons">
+      <button class="icon-btn" id="wishBtn" aria-label="Wishlist"><svg viewBox="0 0 24 24"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z"/></svg><b class="badge" id="wishCount">0</b></button>
+      <button class="icon-btn" id="accBtn" aria-label="Account"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></button>
+      <button class="icon-btn" id="cartBtn" aria-label="Open cart"><svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><b class="badge" id="cartCount">0</b></button>
+    </div>
+  </div>
+</header>
+
+<main id="home">
+  <!-- HERO -->
+  <section class="hero" aria-roledescription="carousel">
+    <div class="slides" id="slides"></div>
+    <div class="hero-copy">
+      <h1>ELEVATE YOUR STYLE</h1>
+      <p>Premium Fashion For Couples &amp; Trendsetters</p>
+      <div class="btns">
+        <a href="#shop" class="btn gold">Shop Now</a>
+        <a href="#shop" class="btn ghost" data-filter="couples">Explore Couples Wear</a>
+      </div>
+    </div>
+    <div class="dots" id="dots"></div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="section wrap reveal" id="categories">
+    <h2 class="title">Shop by Category</h2>
+    <div class="cat-grid" id="catGrid"></div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="section wrap reveal" id="shop">
+    <h2 class="title">Featured Products</h2>
+    <div class="filters" id="filters"></div>
+    <div class="prod-grid" id="prodGrid"></div>
+    <p class="empty" id="noResults" hidden>No products match your search. Try another word or clear the filter.</p>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about reveal" id="about">
+    <div class="wrap">
+      <h2 class="title light">About CFO Clothing</h2>
+      <p>CFO Clothing designs premium pieces for people who dress with intent, from matching sets for couples to everyday essentials. Every item is chosen for fit, fabric and finish, then shipped to your door anywhere in the world.</p>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section wrap reveal" id="reviews">
+    <h2 class="title">What Our Customers Say</h2>
+    <div class="rev-stage" id="revStage" aria-live="polite"></div>
+    <div class="rev-ctrl">
+      <button class="icon-btn" id="revPrev" aria-label="Previous reviews"><svg viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg></button>
+      <span id="revCount"></span>
+      <button class="icon-btn" id="revNext" aria-label="Next reviews"><svg viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg></button>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="trust reveal">
+    <div class="wrap trust-grid" id="trustGrid"></div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="section wrap news reveal" id="contact">
+    <h2 class="title">Get The Latest Updates</h2>
+    <p>New drops, couples collections and member-only offers, straight to your inbox.</p>
+    <form class="news-form" id="newsForm">
+      <input type="email" required placeholder="Enter your email address" aria-label="Email address">
+      <button class="btn gold">Subscribe</button>
+    </form>
+    <p class="form-msg" id="newsMsg" role="status"></p>
+  </section>
+
+  <!-- INSTAGRAM -->
+  <section class="section wrap reveal" id="instagram">
+    <h2 class="title">Follow @cfoclothing</h2>
+    <div class="insta-grid" id="instaGrid"></div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap foot-grid">
+    <div>
+      <div class="logo-text big">CFO <small>Clothing</small></div>
+      <p>Fashion Beyond Expectations</p>
+      <div class="social" id="social"></div>
+    </div>
+    <div><h3>Quick Links</h3><a href="#home">Home</a><a href="#shop">Shop</a><a href="#about">About Us</a><a href="#reviews">Reviews</a></div>
+    <div><h3>Customer Service</h3><a href="#">Shipping Policy</a><a href="#">Return Policy</a><a href="#">Privacy Policy</a><a href="#">Terms</a><a href="#">FAQ</a></div>
+    <div><h3>Contact Information</h3><a href="https://wa.me/2347073838961" target="_blank" rel="noopener">WhatsApp: +2347073838961</a><a href="tel:+2347073838961">Call: +2347073838961</a></div>
+  </div>
+  <p class="copy">&copy; <span id="year"></span> CFO Clothing. All rights reserved.</p>
+</footer>
+
+<!-- CART DRAWER -->
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="Shopping cart" aria-hidden="true">
+  <div class="drawer-head"><h2>Your Cart</h2><button class="icon-btn" id="closeCart" aria-label="Close cart"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></svg></button></div>
+  <div class="drawer-body" id="cartItems"></div>
+  <div class="drawer-foot" id="cartFoot">
+    <form class="promo" id="promoForm"><input id="promoInput" placeholder="Discount code" aria-label="Discount code"><button class="btn dark">Apply</button></form>
+    <p class="form-msg" id="promoMsg" role="status"></p>
+    <dl class="sum">
+      <div><dt>Subtotal</dt><dd id="sSub"></dd></div>
+      <div><dt>Discount</dt><dd id="sDisc"></dd></div>
+      <div><dt>Shipping</dt><dd id="sShip"></dd></div>
+      <div class="tot"><dt>Final Total</dt><dd id="sTotal"></dd></div>
+    </dl>
+    <button class="btn gold full" id="checkout">Checkout on WhatsApp</button>
+  </div>
+</aside>
+
+<!-- QUICK VIEW -->
+<div class="modal" id="modal" aria-hidden="true"><div class="modal-box" id="modalBox"></div></div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<a class="wa-float" href="https://wa.me/2347073838961?text=Hello%20CFO%20Clothing" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11 19.7L3 29l6.5-2A13 13 0 1 0 16 3zm0 2.4a10.6 10.6 0 1 1-5.4 19.7l-.4-.2-3.8 1.1 1.2-3.7-.3-.4A10.6 10.6 0 0 1 16 5.4zm-4 5.2c-.3 0-.7.1-1 .5s-1.3 1.3-1.3 3.1 1.3 3.6 1.5 3.8 2.6 4.1 6.4 5.6c3.2 1.2 3.800 1 4.500.9s2.200-.9 2.500-1.800.3-1.600.2-1.800-.3-.3-.7-.5l-2.400-1.100c-.3-.1-.6-.2-.8.200l-1 1.300c-.2.200-.4.300-.7.100a8.700 8.700 0 0 1-4.300-3.800c-.3-.5.300-.5.800-1.600.1-.2 0-.4 0-.5l-1.100-2.600c-.3-.7-.6-.6-.8-.6z"/></svg>
+</a>
+
+<script src="app.js"></script>
+</body>
+</html>
